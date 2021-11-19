@@ -3,6 +3,9 @@ public class main {
         Auto[] a = new Auto[20];
 
         a[0] = new Auto("dsadasd",21,"audi");
+        a[0] = new Auto("dsadasd",21,"audi");
+        a[0] = new Auto("dsadasd",21,"audi");
+        a[0] = new Auto("dsadasd",21,"audi");
 
         a[0].wyswietl();
     }
