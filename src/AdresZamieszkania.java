@@ -3,5 +3,7 @@ public class AdresZamieszkania {
     private String miejscowosc;
     private String ulica;
 
-    public AdresZamieszkania;
+    public AdresZamieszkania(){
+
+    }
 }
