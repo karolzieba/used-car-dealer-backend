@@ -1,3 +1,9 @@
 public class Dokument{
-public
+    private int liczba;
+public Dokument(){
+
+}
+public void wyswietl(){
+System.out.print(liczba);
+}
 }
