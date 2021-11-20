@@ -1,22 +1,22 @@
 import Auto.Pojazd;
 import Dokumenty.Dokumenty;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 
 public class main {
 
 
     public static void main(String[] args) {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd.M.yyyy");
-        Pojazd p = new Pojazd("12344",1999,"Audi");
+        GregorianCalendar g = new GregorianCalendar(2019,1,1);
+            Date data = g.getTime();
+            //Pojazd p = new Pojazd("12332",123,"sad", umowy, polisaOC);
 
-        try {
-            Dokumenty d = new Dokumenty((formatter.parse("25.04.2020")), p);
-            d.wyswietl();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+           //Dokumenty d = new Dokumenty(data, p);
+           // d.wyswietl();
+
+
 
 
 

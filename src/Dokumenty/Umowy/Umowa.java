@@ -10,6 +10,7 @@ public class Umowa extends Dokumenty {
 private Osoba sprzedawca;
 private Osoba klient;
 
+
     public Umowa(Date data, Pojazd pojazd, Osoba sprzedawca, Osoba klient) {
         super(data, pojazd);
         this.sprzedawca = sprzedawca;
