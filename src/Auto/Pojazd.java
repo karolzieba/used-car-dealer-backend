@@ -1,9 +1,11 @@
-public class Auto {
+package Auto;
+
+public class Pojazd {
     private String vin;
     private int rok;
     private String marka;
 
-    public Auto(String vin,int rok,String marka){
+    public Pojazd(String vin, int rok, String marka){
         this.vin=vin;
         this.rok=rok;
         this.marka=marka;
