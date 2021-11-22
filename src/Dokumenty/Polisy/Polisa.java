@@ -15,4 +15,19 @@ public class Polisa extends Dokumenty {
         DataZakonczenia = dataZakonczenia;
     }
 
+    public Date getDataRozpoczecia() {
+        return dataRozpoczecia;
+    }
+
+    public void setDataRozpoczecia(Date dataRozpoczecia) {
+        this.dataRozpoczecia = dataRozpoczecia;
+    }
+
+    public Date getDataZakonczenia() {
+        return DataZakonczenia;
+    }
+
+    public void setDataZakonczenia(Date dataZakonczenia) {
+        DataZakonczenia = dataZakonczenia;
+    }
 }
