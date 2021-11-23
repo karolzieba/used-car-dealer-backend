@@ -1,15 +1,19 @@
 package Osoba;
 
+import java.util.Date;
+
 public class Osoba {
     private String imie;
     private String nazwisko;
     private int pesel;
+    private Date dataUrodzenia;
     private AdresZamieszkania adres;
 
-    public Osoba(String imie, String nazwisko, int pesel, AdresZamieszkania adres) {
+    public Osoba(String imie, String nazwisko, int pesel, Date dataUrodzenia, AdresZamieszkania adres) {
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.pesel = pesel;
+        this.dataUrodzenia = dataUrodzenia;
         this.adres = adres;
     }
 
@@ -35,6 +39,14 @@ public class Osoba {
 
     public void setPesel(int pesel) {
         this.pesel = pesel;
+    }
+
+    public Date getDataUrodzenia() {
+        return dataUrodzenia;
+    }
+
+    public void setDataUrodzenia(Date dataUrodzenia) {
+        this.dataUrodzenia = dataUrodzenia;
     }
 
     public AdresZamieszkania getAdres() {
