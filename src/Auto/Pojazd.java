@@ -75,4 +75,6 @@ public class Pojazd {
     public void setPolisaAcc(PolisaAcc polisaAcc) {
         this.polisaAcc = polisaAcc;
     }
+
+    public void wyswietl(){}
 }
