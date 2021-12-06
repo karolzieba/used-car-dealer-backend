@@ -1,7 +1,3 @@
-
-import Auto.Pojazd;
-import Dokumenty.Dokumenty;
-
 import java.util.Date;
 import java.util.GregorianCalendar;
 
