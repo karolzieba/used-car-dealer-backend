@@ -42,6 +42,17 @@ public class AccountTest {
         Assertions.assertEquals(employee.getBranch(), branch);
         Assertions.assertEquals(employee.getPosition(), "kierownik");
         Assertions.assertEquals(employee.getSalary(), 4200);
-
     }
+    @Test
+    public void TestValidationNumberOfBankAccount() {
+        Address address = new Address("26-020", "Chmielnik", "rynek", 10);
+        Person person = new Person("Jakub", "Stawiarz", "80032346118", new Date(), address);
+        Account account = new Account("login", "password", "email@gmail.com");
+        Client client = new Client(person, account, "82 1020 5226 0000 6102 0417 7895");
+        //Assertions.assertTrue(client.isValidIban(client.getNumberOfBankAccount()));
+        //person.setPesel("72 1090 2183 0000 0005 6605 6475");
+        Assertions.assertFalse(client.isValidIban(client.getNumberOfBankAccount()));
+    }
+
+
 }
