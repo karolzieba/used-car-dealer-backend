@@ -12,5 +12,6 @@ public class BranchTest {
         Branch branch = new Branch("Branch1", 1, address);
         Assertions.assertEquals(branch.getName(), "Branch1");
         Assertions.assertEquals(branch.getNumberOfBranch(), 1);
+        Assertions.assertEquals(branch.getAdress(), address);
     }
 }

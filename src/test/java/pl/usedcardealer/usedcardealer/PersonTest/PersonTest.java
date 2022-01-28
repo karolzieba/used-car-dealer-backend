@@ -10,8 +10,9 @@ import java.util.Date;
 public class PersonTest {
     @Test
     public void TestAdress() {
+        Date date = new Date();
         Address address = new Address("26-020", "Chmielnik", "rynek", 10);
-        Person person = new Person("Jakub", "Stawiarz", 1234234455, new Date(), address);
+        Person person = new Person("Jakub", "Stawiarz", "80032346118", date, address);
         Assertions.assertEquals(person.getAdress().getPostcode(), "26-020");
         Assertions.assertEquals(person.getAdress().getTown(), "Chmielnik");
         Assertions.assertEquals(person.getAdress().getStreet(), "rynek");
@@ -19,11 +20,27 @@ public class PersonTest {
     }
     @Test
     public void TestPerson() {
+        Date date = new Date();
         Address address = new Address("26-020", "Chmielnik", "rynek", 10);
-        Person person = new Person("Jakub", "Stawiarz", 1234234455, new Date(), address);
+        Person person = new Person("Jakub", "Stawiarz", "80032346118", date, address);
         Assertions.assertEquals(person.getName(), "Jakub");
         Assertions.assertEquals(person.getLastName(), "Stawiarz");
-        Assertions.assertEquals(person.getPesel(), 1234234455);
-        Assertions.assertEquals(person.getDataOfBirth(), new Date());
+        Assertions.assertEquals(person.getPesel(), "80032346118");
+        Assertions.assertEquals(person.getDataOfBirth(), date);
+        Assertions.assertEquals(person.getAdress(), address);
+    }
+    @Test
+    public void TestValidationPesel() {
+        Address address = new Address("26-020", "Chmielnik", "rynek", 10);
+        Person person = new Person("Jakub", "Stawiarz", "80032346118", new Date(), address);
+        Assertions.assertTrue(person.isValidPesel(person.getPesel()));
+        person.setPesel("80032346119");
+        Assertions.assertFalse(person.isValidPesel(person.getPesel()));
+        person.setPesel("800323461197");
+        Assertions.assertFalse(person.isValidPesel(person.getPesel()));
+        person.setPesel("8003234611");
+        Assertions.assertFalse(person.isValidPesel(person.getPesel()));
+        person.setPesel("81132346119");
+        Assertions.assertFalse(person.isValidPesel(person.getPesel()));
     }
 }

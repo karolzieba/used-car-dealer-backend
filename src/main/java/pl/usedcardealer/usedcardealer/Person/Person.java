@@ -5,11 +5,11 @@ import java.util.Date;
 public class Person {
     private String name;
     private String lastName;
-    private int pesel;
+    private String pesel;
     private Date dataOfBirth;
     private Address adress;
 
-    public Person(String name, String lastName, int pesel, Date dataOfBirth, Address adress) {
+    public Person(String name, String lastName, String pesel, Date dataOfBirth, Address adress) {
         this.name = name;
         this.lastName = lastName;
         this.pesel = pesel;
@@ -33,11 +33,11 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public int getPesel() {
+    public String getPesel() {
         return pesel;
     }
 
-    public void setPesel(int pesel) {
+    public void setPesel(String pesel) {
         this.pesel = pesel;
     }
 
@@ -55,5 +55,25 @@ public class Person {
 
     public void setAdress(Address adress) {
         this.adress = adress;
+    }
+
+    public boolean isValidPesel(String pesel) {
+        int psize = pesel.length();
+        if (psize != 11) {
+            return false;
+        }
+        int[] weights = {1,3,7,9,1,3,7,9,1,3};
+        int sum = 0, j;
+        int csum = Integer.parseInt(pesel.substring(psize - 1));
+        for (int i = 0; i < psize - 1; i++) {
+            char c = pesel.charAt(i);
+            j = Integer.parseInt(String.valueOf(c));
+            sum += j * weights[i];
+        }
+        int control = 10 - (sum % 10);
+        if (control == 10) {
+            control = 0;
+        }
+        return (control == csum);
     }
 }
