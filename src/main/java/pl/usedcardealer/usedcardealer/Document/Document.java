@@ -2,9 +2,10 @@ package pl.usedcardealer.usedcardealer.Document;
 
 import pl.usedcardealer.usedcardealer.Car.Car;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Document {
+public class Document implements Serializable {
     private Date creationDate;
     private Car car;
 
