@@ -20,6 +20,7 @@ import java.util.List;
 public class CarTest {
     @Test
     public void TestCar(){
+        /*
         Address address = new Address("26-020", "Chmielnik", "rynek", 10);
         Person person = new Person("Jakub", "Stawiarz", "80032346118", new Date(), address);
         Account account = new Account("login", "password", "email@gmail.com");
@@ -31,6 +32,7 @@ public class CarTest {
         Address addressBranch = new Address("20-100", "Bilcza", "Orkana", 4);
         Branch branch = new Branch("Branch1", 1, addressBranch);
         Employee employee = new Employee(personEmployee, accountEmployee, branch,"szef", 6500);
+        */
 
         /*
         List<Contract> contracts = new ArrayList<>();

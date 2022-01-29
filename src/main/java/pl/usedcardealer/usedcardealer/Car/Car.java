@@ -28,6 +28,7 @@ public class Car {
     private LiabilityInsurance liabilityInsurance;
     private AccInsurance accInsurance;
     private boolean isStolen;
+    private boolean isReserved;
     @ElementCollection
     @CollectionTable(name = "carDamageList", joinColumns = @JoinColumn(name = "id"))
     @Column(name = "carDamage")
@@ -35,6 +36,7 @@ public class Car {
 
     public Car() {
         this.isStolen = false;
+        this.isReserved = false;
     }
 
     public Car(int id, String vin, int year, String manufacturer, String model) {
@@ -44,6 +46,7 @@ public class Car {
         this.manufacturer = manufacturer;
         this.model = model;
         this.isStolen = false;
+        this.isReserved = false;
         this.carDamage = new ArrayList<String>();
     }
 
@@ -127,6 +130,14 @@ public class Car {
 
     public void setStolen(boolean isStolen) {
         this.isStolen = isStolen;
+    }
+
+    public boolean isReserved() {
+        return isReserved;
+    }
+
+    public void setReserved(boolean isSReserved) {
+        this.isReserved = isReserved;
     }
 
     public List<String> getCarDamage() {
