@@ -1,4 +1,4 @@
-/*package pl.usedcardealer.usedcardealer.Document.Contract;
+package pl.usedcardealer.usedcardealer.Document.Contract;
 
 import pl.usedcardealer.usedcardealer.Car.Car;
 import pl.usedcardealer.usedcardealer.Document.Document;
@@ -7,14 +7,19 @@ import pl.usedcardealer.usedcardealer.Account.Employee;
 
 import java.util.Date;
 
-public class Contract extends Document {
+public class Contract implements Document {
     private Employee employee;
     private Client client;
 
     public Contract(Date date, Car car, Employee employee, Client client) {
-        super(date, car);
+        //super(date, car);
         this.employee = employee;
         this.client = client;
+    }
+
+    @Override
+    public void displayDocument() {
+
     }
 
     public Employee getEmployee() {
@@ -32,4 +37,4 @@ public class Contract extends Document {
     public void setClient(Client client) {
         this.client = client;
     }
-}*/
+}

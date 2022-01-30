@@ -1,6 +1,5 @@
 package pl.usedcardealer.usedcardealer.Document.Insurance;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import pl.usedcardealer.usedcardealer.Car.Car;
 import pl.usedcardealer.usedcardealer.Document.Document;
 
@@ -24,17 +23,20 @@ public abstract class Insurance implements Document {
     private LocalDate startDate;
     private LocalDate endDate;
     private LocalDate creationDate;
+    @Transient
+    private Car car;
     private int idCar;
     private double amountOfCompensation;
 
     protected Insurance() { }
 
-    protected Insurance(int id, LocalDate startDate, LocalDate endDate, int idCar) {
+    protected Insurance(int id, LocalDate startDate, LocalDate endDate, Car car) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
         this.creationDate = LocalDate.now();
-        this.idCar = idCar;
+        this.car = car;
+        this.idCar = car.getId();
     }
 
     public abstract double calculateAmountOfCompensation();
@@ -69,6 +71,14 @@ public abstract class Insurance implements Document {
 
     public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     public int getIdCar() {

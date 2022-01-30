@@ -13,19 +13,19 @@ public class LiabilityInsurance extends Insurance {
     public LiabilityInsurance() { }
 
     public LiabilityInsurance(int id, LocalDate startDate, LocalDate endDate, Car car, double price) {
-        super(id, startDate, endDate, car.getId());
+        super(id, startDate, endDate, car);
         this.price = price;
         super.setAmountOfCompensation(calculateAmountOfCompensation());
     }
 
     @Override
     public void displayDocument() {
-
+        System.out.println("Ubezpieczenie " + super.getId() + " o wartości " + super.getAmountOfCompensation() + " złotych.");
     }
 
     @Override
     public double calculateAmountOfCompensation() {
-        return (price * 10);
+        return (price * 5);
     }
 
     public double getPrice() {

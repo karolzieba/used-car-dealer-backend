@@ -19,8 +19,8 @@ public class LiabilityInsuranceConfig {
             Car c3 = new Car(3, "3456", 2014, "Fiat", "Panda");
 
             LiabilityInsurance li1 = new LiabilityInsurance(1, LocalDate.of(2022,01,01), LocalDate.of(2023,01,01), c1, 750);
-            LiabilityInsurance li2 = new LiabilityInsurance(2, LocalDate.parse("2022-01-01"), LocalDate.parse("2023-01-01"), c2, 1000);
-            LiabilityInsurance li3 = new LiabilityInsurance(5, LocalDate.parse("2022-01-01"), LocalDate.parse("2023-01-01"), c3, 1200);
+            LiabilityInsurance li2 = new LiabilityInsurance(2, LocalDate.of(2022,01,01), LocalDate.of(2023,01,01), c2, 1000);
+            LiabilityInsurance li3 = new LiabilityInsurance(3, LocalDate.of(2022,01,01), LocalDate.of(2023,01,01), c3, 1200);
 
             lir.saveAll(
                     List.of(li1, li2, li3)

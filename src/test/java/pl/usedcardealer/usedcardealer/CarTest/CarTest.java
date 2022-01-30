@@ -9,7 +9,7 @@ import pl.usedcardealer.usedcardealer.Account.Employee;
 import pl.usedcardealer.usedcardealer.Branch.Branch;
 import pl.usedcardealer.usedcardealer.Car.Car;
 import pl.usedcardealer.usedcardealer.Document.Contract.Contract;
-import pl.usedcardealer.usedcardealer.Document.Insurance.LiabilityInsurance;
+import pl.usedcardealer.usedcardealer.Document.Insurance.LiabilityInsurance.LiabilityInsurance;
 import pl.usedcardealer.usedcardealer.Person.Address;
 import pl.usedcardealer.usedcardealer.Person.Person;
 
