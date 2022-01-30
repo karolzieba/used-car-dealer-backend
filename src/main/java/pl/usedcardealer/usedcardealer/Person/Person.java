@@ -1,20 +1,25 @@
 package pl.usedcardealer.usedcardealer.Person;
 
-import java.io.Serializable;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import java.time.LocalDate;
 
-public class Person implements Serializable {
+@Embeddable
+public class Person {
     private String name;
     private String lastName;
     private String pesel;
-    private LocalDate dataOfBirth;
+    private LocalDate dateOfBirth;
+    @Embedded
     private Address adress;
 
-    public Person(String name, String lastName, String pesel, LocalDate dataOfBirth, Address adress) {
+    public Person() { }
+
+    public Person(String name, String lastName, String pesel, LocalDate dateOfBirth, Address adress) {
         this.name = name;
         this.lastName = lastName;
         this.pesel = pesel;
-        this.dataOfBirth = dataOfBirth;
+        this.dateOfBirth = dateOfBirth;
         this.adress = adress;
     }
 
@@ -42,12 +47,12 @@ public class Person implements Serializable {
         this.pesel = pesel;
     }
 
-    public LocalDate getDataOfBirth() {
-        return dataOfBirth;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setDataOfBirth(LocalDate dataOfBirth) {
-        this.dataOfBirth = dataOfBirth;
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public Address getAdress() {

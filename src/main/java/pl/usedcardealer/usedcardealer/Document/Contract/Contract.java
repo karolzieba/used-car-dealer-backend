@@ -36,6 +36,7 @@ public abstract class Contract implements Document {
     public Contract() { }
 
     public Contract(int id, Employee employee, Client client, Car car) {
+        this.id = id;
         this.employee = employee;
         this.idEmployee = employee.getId();
         this.client = client;

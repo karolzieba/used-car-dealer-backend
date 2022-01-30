@@ -1,9 +1,14 @@
 package pl.usedcardealer.usedcardealer.Account;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Account {
     private String login;
     private String password;
     private String emailAddress;
+
+    public Account() { }
 
     public Account(String login, String password, String emailAddress) {
         this.login = login;

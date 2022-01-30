@@ -3,7 +3,7 @@ package pl.usedcardealer.usedcardealer.AccountTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pl.usedcardealer.usedcardealer.Account.Account;
-import pl.usedcardealer.usedcardealer.Account.Administrator;
+import pl.usedcardealer.usedcardealer.Account.Administrator.Administrator;
 import pl.usedcardealer.usedcardealer.Account.Client;
 import pl.usedcardealer.usedcardealer.Account.Employee;
 import pl.usedcardealer.usedcardealer.Branch.Branch;
@@ -11,7 +11,6 @@ import pl.usedcardealer.usedcardealer.Person.Address;
 import pl.usedcardealer.usedcardealer.Person.Person;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class AccountTest {
     @Test
@@ -64,7 +63,7 @@ public class AccountTest {
         Address address = new Address("26-020", "Chmielnik", "rynek", 10);
         Person person = new Person("Jakub", "Stawiarz", "80032346118", LocalDate.now(), address);
         Account account = new Account("login", "password", "email@gmail.com");
-        Administrator administrator = new Administrator(person, account);
+        Administrator administrator = new Administrator(1, person, account);
         Assertions.assertEquals(administrator.getPerson(), person);
         Assertions.assertEquals(administrator.getAccount(), account);
 

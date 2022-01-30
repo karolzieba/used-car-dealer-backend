@@ -1,12 +1,15 @@
 package pl.usedcardealer.usedcardealer.Person;
 
-import java.io.Serializable;
+import javax.persistence.Embeddable;
 
-public class Address implements Serializable {
+@Embeddable
+public class Address {
     private String postcode;
     private String city;
     private String street;
     private int propertyNumber;
+
+    public Address() { }
 
     public Address(String postcode, String city, String street, int propertyNumber) {
         this.postcode = postcode;

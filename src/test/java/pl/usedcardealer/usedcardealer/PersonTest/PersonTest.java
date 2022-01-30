@@ -26,7 +26,7 @@ public class PersonTest {
         Assertions.assertEquals(person.getName(), "Jakub");
         Assertions.assertEquals(person.getLastName(), "Stawiarz");
         Assertions.assertEquals(person.getPesel(), "80032346118");
-        Assertions.assertEquals(person.getDataOfBirth(), date);
+        Assertions.assertEquals(person.getDateOfBirth(), date);
         Assertions.assertEquals(person.getAdress(), address);
     }
     @Test
