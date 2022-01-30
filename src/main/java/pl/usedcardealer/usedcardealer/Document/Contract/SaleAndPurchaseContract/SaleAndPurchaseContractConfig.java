@@ -23,10 +23,10 @@ public class SaleAndPurchaseContractConfig {
             Car c3 = new Car(3, "3456", 2014, "Fiat", "Panda");
 
             Employee e1 = new Employee(2, new Person("Janusz", "Kowalski", "122222222", LocalDate.now(), new Address("00-000", "Gdańsk", "Tatrzańska", 30)),
-                    new Account("login123", "haslo123", "test@test.pl"), "Kierownik", 5000);
+                    new Account("login456", "haslo456", "test3@test3.pl"), "Kierownik", 5000);
 
             Client cl1 = new Client(2, new Person("Janusz", "Nowak", "133333333", LocalDate.now(), new Address("00-001", "Warszawa", "Nowy Świat", 40)),
-                    new Account("login321", "haslo321", "test2@test2.pl"), "111111");
+                    new Account("login654", "haslo654", "test4@test4.pl"), "111111");
 
             SaleAndPurchaseContract sapc1 = new SaleAndPurchaseContract(2, e1, cl1, c1, 10000);
 

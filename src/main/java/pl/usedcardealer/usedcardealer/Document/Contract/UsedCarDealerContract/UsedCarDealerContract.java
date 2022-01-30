@@ -5,11 +5,15 @@ import pl.usedcardealer.usedcardealer.Account.Employee;
 import pl.usedcardealer.usedcardealer.Car.Car;
 import pl.usedcardealer.usedcardealer.Document.Contract.Contract;
 
+import javax.persistence.*;
 import java.util.Iterator;
 import java.util.List;
 
+@Entity
 public class UsedCarDealerContract extends Contract {
     private List<String> conditions;
+
+    public UsedCarDealerContract() { }
 
     public UsedCarDealerContract(int id, Employee employee, Client client, Car car, List<String> conditions) {
         super(id, employee, client, car);
