@@ -11,13 +11,13 @@ import java.time.LocalDate;
 public abstract class Insurance implements Document {
     @Id
     @SequenceGenerator(
-            name = "liabilityinsurance_sequence",
-            sequenceName = "liabilityinsurance_sequence",
+            name = "insurance_sequence",
+            sequenceName = "insurance_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "liabilityinsurance_sequence"
+            generator = "insurance_sequence"
     )
     private int id;
     private LocalDate startDate;

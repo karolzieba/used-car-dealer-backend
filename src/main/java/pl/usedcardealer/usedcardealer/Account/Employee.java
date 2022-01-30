@@ -1,19 +1,18 @@
 package pl.usedcardealer.usedcardealer.Account;
 
 import pl.usedcardealer.usedcardealer.Person.Person;
-import pl.usedcardealer.usedcardealer.Branch.Branch;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable {
     private Person person;
     private Account account;
-    private Branch branch;
     private String position;
     private int salary;
 
-    public Employee(Person person, Account account, Branch branch, String position, int salary) {
+    public Employee(Person person, Account account, String position, int salary) {
         this.person = person;
         this.account = account;
-        this.branch = branch;
         this.position = position;
         this.salary = salary;
     }
@@ -32,14 +31,6 @@ public class Employee {
 
     public void setAccount(Account account) {
         this.account = account;
-    }
-
-    public Branch getBranch() {
-        return branch;
-    }
-
-    public void setBranch(Branch branch) {
-        this.branch = branch;
     }
 
     public String getPosition() {

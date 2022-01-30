@@ -1,15 +1,16 @@
 package pl.usedcardealer.usedcardealer.Person;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.time.LocalDate;
 
-public class Person {
+public class Person implements Serializable {
     private String name;
     private String lastName;
     private String pesel;
-    private Date dataOfBirth;
+    private LocalDate dataOfBirth;
     private Address adress;
 
-    public Person(String name, String lastName, String pesel, Date dataOfBirth, Address adress) {
+    public Person(String name, String lastName, String pesel, LocalDate dataOfBirth, Address adress) {
         this.name = name;
         this.lastName = lastName;
         this.pesel = pesel;
@@ -41,11 +42,11 @@ public class Person {
         this.pesel = pesel;
     }
 
-    public Date getDataOfBirth() {
+    public LocalDate getDataOfBirth() {
         return dataOfBirth;
     }
 
-    public void setDataOfBirth(Date dataOfBirth) {
+    public void setDataOfBirth(LocalDate dataOfBirth) {
         this.dataOfBirth = dataOfBirth;
     }
 

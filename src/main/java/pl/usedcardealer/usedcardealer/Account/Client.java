@@ -2,7 +2,9 @@ package pl.usedcardealer.usedcardealer.Account;
 
 import pl.usedcardealer.usedcardealer.Person.Person;
 
-public class Client {
+import java.io.Serializable;
+
+public class Client implements Serializable {
     private Person person;
     private Account account;
     private String numberOfBankAccount;

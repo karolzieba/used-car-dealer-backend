@@ -1,14 +1,16 @@
 package pl.usedcardealer.usedcardealer.Person;
 
-public class Address {
+import java.io.Serializable;
+
+public class Address implements Serializable {
     private String postcode;
-    private String town;
+    private String city;
     private String street;
     private int propertyNumber;
 
-    public Address(String postcode, String town, String street, int propertyNumber) {
+    public Address(String postcode, String city, String street, int propertyNumber) {
         this.postcode = postcode;
-        this.town = town;
+        this.city = city;
         this.street = street;
         this.propertyNumber = propertyNumber;
     }
@@ -21,12 +23,12 @@ public class Address {
         this.postcode = postcode;
     }
 
-    public String getTown() {
-        return town;
+    public String getCity() {
+        return city;
     }
 
-    public void setTown(String town) {
-        this.town = town;
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getStreet() {
