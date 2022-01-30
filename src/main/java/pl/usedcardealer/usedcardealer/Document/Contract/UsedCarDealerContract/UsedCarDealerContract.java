@@ -11,6 +11,9 @@ import java.util.List;
 
 @Entity
 public class UsedCarDealerContract extends Contract {
+    @ElementCollection
+    @CollectionTable(name = "contractConditions", joinColumns = @JoinColumn(name = "id"))
+    @Column(name = "conditions")
     private List<String> conditions;
 
     public UsedCarDealerContract() { }
