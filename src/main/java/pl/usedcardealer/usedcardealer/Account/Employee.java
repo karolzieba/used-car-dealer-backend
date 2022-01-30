@@ -5,16 +5,26 @@ import pl.usedcardealer.usedcardealer.Person.Person;
 import java.io.Serializable;
 
 public class Employee implements Serializable {
+    private int id;
     private Person person;
     private Account account;
     private String position;
     private int salary;
 
-    public Employee(Person person, Account account, String position, int salary) {
+    public Employee(int id, Person person, Account account, String position, int salary) {
+        this.id = id;
         this.person = person;
         this.account = account;
         this.position = position;
         this.salary = salary;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Person getPerson() {

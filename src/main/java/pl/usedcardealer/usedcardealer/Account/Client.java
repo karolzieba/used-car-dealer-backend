@@ -5,16 +5,26 @@ import pl.usedcardealer.usedcardealer.Person.Person;
 import java.io.Serializable;
 
 public class Client implements Serializable {
+    private int id;
     private Person person;
     private Account account;
     private String numberOfBankAccount;
     private int numberOfPurchases = 0;
     private int numberOfSales = 0;
 
-    public Client(Person person, Account account, String numberOfBankAccount) {
+    public Client(int id, Person person, Account account, String numberOfBankAccount) {
+        this.id = id;
         this.person = person;
         this.account = account;
         this.numberOfBankAccount = numberOfBankAccount;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Person getPerson() {

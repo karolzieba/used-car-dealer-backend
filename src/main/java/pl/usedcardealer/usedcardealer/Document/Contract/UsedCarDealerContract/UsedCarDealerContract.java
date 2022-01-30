@@ -29,27 +29,6 @@ public class UsedCarDealerContract extends Contract {
         System.out.println(tekst);
     }
 
-    public void addCondition(String condition) {
-        if(correctCondition(condition)) {
-            conditions.add(condition);
-        }
-    }
-
-    private boolean correctCondition(String condition) {
-        if(condition.equals("Warunek 1") || condition.equals("Warunek 2") || condition.equals("Warunek 3")) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    public void deleteCondition(String condition) {
-        if(correctCondition(condition)) {
-            conditions.add(condition);
-        }
-    }
-
     public List<String> getConditions() {
         return conditions;
     }

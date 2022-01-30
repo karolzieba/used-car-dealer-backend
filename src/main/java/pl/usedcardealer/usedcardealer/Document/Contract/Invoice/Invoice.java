@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 public class Invoice extends Contract {
     private double amount;
 
+    public Invoice() { }
+
     public Invoice(int id, Employee employee, Client client, Car car, double amount) {
         super(id, employee, client, car);
         this.amount = amount;

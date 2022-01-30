@@ -5,8 +5,13 @@ import pl.usedcardealer.usedcardealer.Account.Employee;
 import pl.usedcardealer.usedcardealer.Car.Car;
 import pl.usedcardealer.usedcardealer.Document.Contract.Contract;
 
+import javax.persistence.Entity;
+
+@Entity
 public class SaleAndPurchaseContract extends Contract {
     private double amount;
+
+    public SaleAndPurchaseContract() { }
 
     public SaleAndPurchaseContract(int id, Employee employee, Client client, Car car, double amount) {
         super(id, employee, client, car);
