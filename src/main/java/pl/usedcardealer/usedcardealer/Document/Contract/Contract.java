@@ -2,8 +2,8 @@ package pl.usedcardealer.usedcardealer.Document.Contract;
 
 import pl.usedcardealer.usedcardealer.Car.Car;
 import pl.usedcardealer.usedcardealer.Document.Document;
-import pl.usedcardealer.usedcardealer.Account.Client;
-import pl.usedcardealer.usedcardealer.Account.Employee;
+import pl.usedcardealer.usedcardealer.Account.Client.Client;
+import pl.usedcardealer.usedcardealer.Account.Employee.Employee;
 
 import javax.persistence.*;
 import java.time.LocalDate;

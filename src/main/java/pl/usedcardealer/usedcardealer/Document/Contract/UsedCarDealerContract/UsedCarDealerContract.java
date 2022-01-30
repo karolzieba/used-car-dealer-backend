@@ -1,7 +1,7 @@
 package pl.usedcardealer.usedcardealer.Document.Contract.UsedCarDealerContract;
 
-import pl.usedcardealer.usedcardealer.Account.Client;
-import pl.usedcardealer.usedcardealer.Account.Employee;
+import pl.usedcardealer.usedcardealer.Account.Client.Client;
+import pl.usedcardealer.usedcardealer.Account.Employee.Employee;
 import pl.usedcardealer.usedcardealer.Car.Car;
 import pl.usedcardealer.usedcardealer.Document.Contract.Contract;
 

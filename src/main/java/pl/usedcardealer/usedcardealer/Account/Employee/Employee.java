@@ -1,15 +1,33 @@
-package pl.usedcardealer.usedcardealer.Account;
+package pl.usedcardealer.usedcardealer.Account.Employee;
 
+import pl.usedcardealer.usedcardealer.Account.Account;
 import pl.usedcardealer.usedcardealer.Person.Person;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
-public class Employee implements Serializable {
+@Entity
+@Table
+public class Employee {
+    @Id
+    @SequenceGenerator(
+            name = "employee_sequence",
+            sequenceName = "employee_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "employee_sequence"
+    )
     private int id;
+    @Embedded
     private Person person;
+    @Embedded
     private Account account;
     private String position;
     private int salary;
+
+    public Employee() { }
 
     public Employee(int id, Person person, Account account, String position, int salary) {
         this.id = id;

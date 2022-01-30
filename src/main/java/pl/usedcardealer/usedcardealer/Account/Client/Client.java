@@ -1,22 +1,41 @@
-package pl.usedcardealer.usedcardealer.Account;
+package pl.usedcardealer.usedcardealer.Account.Client;
 
+import pl.usedcardealer.usedcardealer.Account.Account;
 import pl.usedcardealer.usedcardealer.Person.Person;
 
-import java.io.Serializable;
+import javax.persistence.*;
 
-public class Client implements Serializable {
+@Entity
+@Table
+public class Client {
+    @Id
+    @SequenceGenerator(
+            name = "client_sequence",
+            sequenceName = "client_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "client_sequence"
+    )
     private int id;
+    @Embedded
     private Person person;
+    @Embedded
     private Account account;
     private String numberOfBankAccount;
-    private int numberOfPurchases = 0;
-    private int numberOfSales = 0;
+    private int numberOfPurchases;
+    private int numberOfSales;
+
+    public Client() { }
 
     public Client(int id, Person person, Account account, String numberOfBankAccount) {
         this.id = id;
         this.person = person;
         this.account = account;
         this.numberOfBankAccount = numberOfBankAccount;
+        this.numberOfPurchases = 0;
+        this.numberOfSales = 0;
     }
 
     public int getId() {

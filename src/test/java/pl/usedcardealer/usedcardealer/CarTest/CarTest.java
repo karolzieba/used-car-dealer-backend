@@ -1,21 +1,7 @@
 package pl.usedcardealer.usedcardealer.CarTest;
 
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import pl.usedcardealer.usedcardealer.Account.Account;
-import pl.usedcardealer.usedcardealer.Account.Client;
-import pl.usedcardealer.usedcardealer.Account.Employee;
-import pl.usedcardealer.usedcardealer.Branch.Branch;
-import pl.usedcardealer.usedcardealer.Car.Car;
-import pl.usedcardealer.usedcardealer.Document.Contract.Contract;
-import pl.usedcardealer.usedcardealer.Document.Insurance.LiabilityInsurance.LiabilityInsurance;
-import pl.usedcardealer.usedcardealer.Person.Address;
-import pl.usedcardealer.usedcardealer.Person.Person;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class CarTest {
     @Test
