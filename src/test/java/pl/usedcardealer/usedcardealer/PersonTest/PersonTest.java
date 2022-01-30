@@ -5,22 +5,22 @@ import org.junit.jupiter.api.Test;
 import pl.usedcardealer.usedcardealer.Person.Address;
 import pl.usedcardealer.usedcardealer.Person.Person;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class PersonTest {
     @Test
     public void TestAdress() {
-        Date date = new Date();
+        LocalDate date = LocalDate.now();
         Address address = new Address("26-020", "Chmielnik", "rynek", 10);
         Person person = new Person("Jakub", "Stawiarz", "80032346118", date, address);
         Assertions.assertEquals(person.getAdress().getPostcode(), "26-020");
-        Assertions.assertEquals(person.getAdress().getTown(), "Chmielnik");
         Assertions.assertEquals(person.getAdress().getStreet(), "rynek");
         Assertions.assertEquals(person.getAdress().getPropertyNumber(), 10);
     }
     @Test
     public void TestPerson() {
-        Date date = new Date();
+        LocalDate date = LocalDate.now();
         Address address = new Address("26-020", "Chmielnik", "rynek", 10);
         Person person = new Person("Jakub", "Stawiarz", "80032346118", date, address);
         Assertions.assertEquals(person.getName(), "Jakub");
@@ -32,7 +32,7 @@ public class PersonTest {
     @Test
     public void TestValidationPesel() {
         Address address = new Address("26-020", "Chmielnik", "rynek", 10);
-        Person person = new Person("Jakub", "Stawiarz", "80032346118", new Date(), address);
+        Person person = new Person("Jakub", "Stawiarz", "80032346118", LocalDate.now(), address);
         Assertions.assertTrue(person.isValidPesel(person.getPesel()));
         person.setPesel("80032346119");
         Assertions.assertFalse(person.isValidPesel(person.getPesel()));

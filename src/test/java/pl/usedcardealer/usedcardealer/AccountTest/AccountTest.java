@@ -10,6 +10,7 @@ import pl.usedcardealer.usedcardealer.Branch.Branch;
 import pl.usedcardealer.usedcardealer.Person.Address;
 import pl.usedcardealer.usedcardealer.Person.Person;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class AccountTest {
@@ -30,15 +31,15 @@ public class AccountTest {
     @Test
     public void TestClient() {
         Address address = new Address("26-020", "Chmielnik", "rynek", 10);
-        Person person = new Person("Jakub", "Stawiarz", "80032346118", new Date(), address);
+        Person person = new Person("Jakub", "Stawiarz", "80032346118", LocalDate.now(), address);
         Account account = new Account("login", "password", "email@gmail.com");
-        Client client = new Client(person, account, "87101013970055002221000000");
+        Client client = new Client(1, person, account, "87101013970055002221000000");
         Assertions.assertEquals(client.getPerson(), person);
         Assertions.assertEquals(client.getAccount(), account);
         Assertions.assertEquals(client.getNumberOfBankAccount(), "87101013970055002221000000");
 
         Address address2 = new Address("25-200", "Kielce", "Jasna", 17);
-        Person person2 = new Person("Jan", "Kowalski", "99032346113", new Date(), address2);
+        Person person2 = new Person("Jan", "Kowalski", "99032346113", LocalDate.now(), address2);
         client.setPerson(person2);
         Account account2 = new Account("login", "password", "email@gmail.com");
         client.setAccount(account2);
@@ -48,28 +49,27 @@ public class AccountTest {
     @Test
     public void TestEmployee() {
         Address address = new Address("26-020", "Chmielnik", "rynek", 10);
-        Person person = new Person("Jakub", "Stawiarz", "80032346118", new Date(), address);
+        Person person = new Person("Jakub", "Stawiarz", "80032346118", LocalDate.now(), address);
         Account account = new Account("login", "password", "email@gmail.com");
         Address addressBranch = new Address("26-020", "Chmielnik", "Orkana", 4);
         Branch branch = new Branch("Branch1", 1, addressBranch);
-        Employee employee = new Employee(person, account, branch,"kierownik", 4200);
+        Employee employee = new Employee(1, person, account,"kierownik", 4200);
         Assertions.assertEquals(employee.getPerson(), person);
         Assertions.assertEquals(employee.getAccount(), account);
-        Assertions.assertEquals(employee.getBranch(), branch);
         Assertions.assertEquals(employee.getPosition(), "kierownik");
         Assertions.assertEquals(employee.getSalary(), 4200);
     }
     @Test
     public void TestAdministrator() {
         Address address = new Address("26-020", "Chmielnik", "rynek", 10);
-        Person person = new Person("Jakub", "Stawiarz", "80032346118", new Date(), address);
+        Person person = new Person("Jakub", "Stawiarz", "80032346118", LocalDate.now(), address);
         Account account = new Account("login", "password", "email@gmail.com");
         Administrator administrator = new Administrator(person, account);
         Assertions.assertEquals(administrator.getPerson(), person);
         Assertions.assertEquals(administrator.getAccount(), account);
 
         Address address2 = new Address("25-200", "Kielce", "Jasna", 17);
-        Person person2 = new Person("Jan", "Kowalski", "99032346113", new Date(), address2);
+        Person person2 = new Person("Jan", "Kowalski", "99032346113", LocalDate.now(), address2);
         administrator.setPerson(person2);
         Account account2 = new Account("login", "password", "email@gmail.com");
         administrator.setAccount(account2);
@@ -79,9 +79,9 @@ public class AccountTest {
     @Test
     public void TestValidationNumberOfBankAccount() {
         Address address = new Address("26-020", "Chmielnik", "rynek", 10);
-        Person person = new Person("Jakub", "Stawiarz", "80032346118", new Date(), address);
+        Person person = new Person("Jakub", "Stawiarz", "80032346118", LocalDate.now(), address);
         Account account = new Account("login", "password", "email@gmail.com");
-        Client client = new Client(person, account, "PL 83 1010 1023 0000 2613 9510 0000");
+        Client client = new Client(2, person, account, "PL 83 1010 1023 0000 2613 9510 0000");
         Assertions.assertTrue(client.isValidIban(client.getNumberOfBankAccount()));
         client.setNumberOfBankAccount("PL 83 1010 1023 0000 2613 9510 0055");
         Assertions.assertFalse(client.isValidIban(client.getNumberOfBankAccount()));
