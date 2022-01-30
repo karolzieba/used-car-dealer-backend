@@ -10,7 +10,7 @@ import java.util.List;
 public class CarConfig {
 
     @Bean
-    CommandLineRunner clr(CarRepository cr) {
+    CommandLineRunner clrcar(CarRepository cr) {
         return args -> {
             Car c1 = new Car(1, "1234", 2011, "Volkswagen", "Polo");
             Car c2 = new Car(2, "2345", 2018, "Toyota", "Yaris");

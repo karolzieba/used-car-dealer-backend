@@ -1,15 +1,13 @@
 package pl.usedcardealer.usedcardealer.Car;
 
-import pl.usedcardealer.usedcardealer.Document.Insurance.*;
-
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table
-public class Car {
+public class Car implements Serializable {
     @Id
     @SequenceGenerator(
             name = "car_sequence",
@@ -25,8 +23,6 @@ public class Car {
     private int year;
     private String manufacturer;
     private String model;
-    private LiabilityInsurance liabilityInsurance;
-    private AccInsurance accInsurance;
     private boolean isStolen;
     private boolean isReserved;
     @ElementCollection
@@ -36,7 +32,6 @@ public class Car {
 
     public Car() {
         this.isStolen = false;
-        this.isReserved = false;
     }
 
     public Car(int id, String vin, int year, String manufacturer, String model) {
@@ -90,40 +85,6 @@ public class Car {
         this.model = model;
     }
 
-    public LiabilityInsurance getLiabilityInsurance() {
-        return liabilityInsurance;
-    }
-
-    public void setLiabilityInsurance(LiabilityInsurance liabilityInsurance) {
-        this.liabilityInsurance = liabilityInsurance;
-    }
-
-    public boolean isLiabilityInsuranced() {
-        if(Objects.isNull(liabilityInsurance)) {
-            return false;
-        }
-        else {
-            return true;
-        }
-    }
-
-    public AccInsurance getAccInsurance() {
-        return accInsurance;
-    }
-
-    public void setAccInsurance(AccInsurance accInsurance) {
-        this.accInsurance = accInsurance;
-    }
-
-    public boolean isAccInsuranced() {
-        if(Objects.isNull(accInsurance)) {
-            return false;
-        }
-        else {
-            return true;
-        }
-    }
-
     public boolean isStolen() {
         return isStolen;
     }
@@ -136,12 +97,16 @@ public class Car {
         return isReserved;
     }
 
-    public void setReserved(boolean isSReserved) {
-        this.isReserved = isReserved;
+    public void setReserved(boolean reserved) {
+        isReserved = reserved;
     }
 
     public List<String> getCarDamage() {
         return carDamage;
+    }
+
+    public void setCarDamage(List<String> carDamage) {
+        this.carDamage = carDamage;
     }
 
     public boolean isCarIsDamaged() {

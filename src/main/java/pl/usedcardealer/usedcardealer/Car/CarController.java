@@ -2,8 +2,6 @@ package pl.usedcardealer.usedcardealer.Car;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pl.usedcardealer.usedcardealer.Document.Insurance.AccInsurance;
-import pl.usedcardealer.usedcardealer.Document.Insurance.LiabilityInsurance;
 
 import java.util.List;
 
@@ -29,12 +27,11 @@ public class CarController {
 
     @PutMapping(path = "{carId}")
     public void putCar(@PathVariable("carId") int id,
-                       @RequestParam(required = false) LiabilityInsurance liabilityInsurance,
-                       @RequestParam(required = false) AccInsurance accInsurance,
                        @RequestParam(required = false) boolean isStolen,
+                       @RequestParam(required = false) boolean isReserved,
                        @RequestParam(required = false) String damageToAdd,
                        @RequestParam(required = false) String damageToRemove) {
-        carservice.putCar(id, liabilityInsurance, accInsurance, isStolen, damageToAdd, damageToRemove);
+        carservice.putCar(id, isStolen, isReserved, damageToAdd, damageToRemove);
     }
 
     @DeleteMapping(path = "{carId}")

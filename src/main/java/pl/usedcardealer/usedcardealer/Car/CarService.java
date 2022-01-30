@@ -1,8 +1,6 @@
 package pl.usedcardealer.usedcardealer.Car;
 
 import org.springframework.stereotype.Service;
-import pl.usedcardealer.usedcardealer.Document.Insurance.AccInsurance;
-import pl.usedcardealer.usedcardealer.Document.Insurance.LiabilityInsurance;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -10,7 +8,6 @@ import java.util.Objects;
 
 @Service
 public class CarService {
-
     private CarRepository repository;
 
     public CarService(CarRepository repository) {
@@ -26,22 +23,16 @@ public class CarService {
     }
 
     @Transactional
-    public void putCar(int id, LiabilityInsurance liabilityInsurance, AccInsurance accInsurance,
-                       boolean isStolen, String damageToAdd, String damageToRemove) {
-
+    public void putCar(int id, boolean isStolen, boolean isReserved, String damageToAdd, String damageToRemove) {
         if(repository.existsById(id)) {
             Car c = repository.findById(id).orElseThrow(() -> new IllegalStateException("Auto o takim ID nie istnieje!"));
 
-            if(!Objects.isNull(liabilityInsurance)) {
-                c.setLiabilityInsurance(liabilityInsurance);
-            }
-
-            if(!Objects.isNull(accInsurance)) {
-                c.setAccInsurance(accInsurance);
-            }
-
             if(!Objects.isNull(isStolen)) {
                 c.setStolen(isStolen);
+            }
+
+            if(!Objects.isNull(isReserved)) {
+                c.setStolen(isReserved);
             }
 
             if(!Objects.isNull(damageToAdd)) {

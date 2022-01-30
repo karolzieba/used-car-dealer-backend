@@ -1,4 +1,4 @@
-package pl.usedcardealer.usedcardealer.Document.Contract;
+/*package pl.usedcardealer.usedcardealer.Document.Contract;
 
 import pl.usedcardealer.usedcardealer.Car.Car;
 import pl.usedcardealer.usedcardealer.Document.Document;
@@ -32,4 +32,4 @@ public class Contract extends Document {
     public void setClient(Client client) {
         this.client = client;
     }
-}
+}*/

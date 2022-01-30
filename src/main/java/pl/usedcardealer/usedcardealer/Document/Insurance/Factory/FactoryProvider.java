@@ -1,4 +1,4 @@
-package pl.usedcardealer.usedcardealer.Document.Insurance.Factory;
+/*package pl.usedcardealer.usedcardealer.Document.Insurance.Factory;
 
 public class FactoryProvider {
     public static InsuranceFactory getFactory(String type) {
@@ -11,4 +11,4 @@ public class FactoryProvider {
 
         return null;
     }
-}
+}*/
