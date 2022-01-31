@@ -1,31 +1,42 @@
 package pl.usedcardealer.usedcardealer.CarTest;
 
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import pl.usedcardealer.usedcardealer.Car.Car;
 
 public class CarTest {
     @Test
     public void TestCar(){
-        /*
-        Address address = new Address("26-020", "Chmielnik", "rynek", 10);
-        Person person = new Person("Jakub", "Stawiarz", "80032346118", new Date(), address);
-        Account account = new Account("login", "password", "email@gmail.com");
-        Client client = new Client(person, account, "87101013970055002221000000");
+        Car car = new Car(4, "666666", 2021, "Volkswagen", "Golf");
+        Assertions.assertEquals(car.getId(), 4);
+        Assertions.assertEquals(car.getVin(), "666666");
+        Assertions.assertEquals(car.getYear(), 2021);
+        Assertions.assertEquals(car.getManufacturer(), "Volkswagen");
+        Assertions.assertEquals(car.getModel(), "Golf");
+        Assertions.assertFalse(car.isStolen());
+        Assertions.assertFalse(car.isReserved());
+        Assertions.assertFalse(car.isCarIsDamaged());
 
-        Address addressEmployee = new Address("26-000", "Kielce", "srebrna", 5);
-        Person personEmployee = new Person("Jan", "Kowalski", "80032346118", new Date(), addressEmployee);
-        Account accountEmployee = new Account("login", "password", "email@gmail.com");
-        Address addressBranch = new Address("20-100", "Bilcza", "Orkana", 4);
-        Branch branch = new Branch("Branch1", 1, addressBranch);
-        Employee employee = new Employee(personEmployee, accountEmployee, branch,"szef", 6500);
-        */
+        car.setId(5);
+        Assertions.assertEquals(car.getId(), 5);
 
-        /*
-        List<Contract> contracts = new ArrayList<>();
-        contracts.add();
-        LiabilityInsurance liabilityInsurance = new LiabilityInsurance();
-        Car car = new Car("25-324", 2012, "BMW", contracts, liabilityInsurance);
-        */
+        car.setVin("444444");
+        Assertions.assertEquals(car.getVin(), "444444");
 
+        car.setYear(2018);
+        Assertions.assertEquals(car.getYear(), 2018);
+
+        car.setManufacturer("BMW");
+        Assertions.assertEquals(car.getManufacturer(), "BMW");
+
+        car.setModel("E90");
+        Assertions.assertEquals(car. getModel(), "E90");
+
+        car.setReserved(true);
+        Assertions.assertTrue(car.isReserved());
+
+        car.setStolen(true);
+        Assertions.assertTrue(car.isStolen());
     }
 }

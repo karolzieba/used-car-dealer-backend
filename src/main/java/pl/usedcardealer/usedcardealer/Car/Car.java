@@ -32,6 +32,7 @@ public class Car implements Serializable {
 
     public Car() {
         this.isStolen = false;
+        this.isReserved = false;
     }
 
     public Car(int id, String vin, int year, String manufacturer, String model) {
