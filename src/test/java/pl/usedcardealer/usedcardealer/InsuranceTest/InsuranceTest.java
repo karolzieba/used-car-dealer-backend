@@ -16,6 +16,9 @@ public class InsuranceTest {
         Car car = new Car(1, "222222", 2012, "Kia", "Stinger");
         LiabilityInsurance li = new LiabilityInsurance(1, LocalDate.of(2021, 01, 01), LocalDate.of(2022, 01, 01), car, 5000);
 
+        Assertions.assertNotNull(car);
+        Assertions.assertNotNull(li);
+
         Assertions.assertEquals(li.getId(), 1);
         Assertions.assertEquals(li.getStartDate(), LocalDate.of(2021, 01, 01));
         Assertions.assertEquals(li.getEndDate(), LocalDate.of(2022, 01, 01));
@@ -31,11 +34,16 @@ public class InsuranceTest {
         Car car = new Car(2, "111111", 2011, "Hyundai", "Tucson");
         Map<String, Double> prices = new HashMap<>();
 
+        Assertions.assertNotNull(car);
+        Assertions.assertNotNull(prices);
+
         prices.put("Price 1", 550.5);
         prices.put("Price 2", 560.5);
         prices.put("Price 3", 570.5);
 
         AccInsurance acc = new AccInsurance(1, LocalDate.of(2021, 01, 01), LocalDate.of(2022, 01, 01), car, prices);
+
+        Assertions.assertNotNull(acc);
 
         Assertions.assertEquals(acc.getId(), 1);
         Assertions.assertEquals(acc.getStartDate(), LocalDate.of(2021, 01, 01));

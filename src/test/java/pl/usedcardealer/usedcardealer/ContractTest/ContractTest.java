@@ -14,7 +14,10 @@ import pl.usedcardealer.usedcardealer.Person.Person;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContractTest {
     @Test
@@ -26,6 +29,11 @@ public class ContractTest {
         Car car = new Car(1, "222222", 2012, "Kia", "Stinger");
 
         Invoice i = new Invoice(1, e1, cl1, car, 10000);
+
+        Assertions.assertNotNull(e1);
+        Assertions.assertNotNull(cl1);
+        Assertions.assertNotNull(car);
+        Assertions.assertNotNull(i);
 
         Assertions.assertEquals(i.getId(), 1);
         Assertions.assertEquals(i.getIdCar(), 1);
@@ -44,7 +52,13 @@ public class ContractTest {
                 new Account("login321", "haslo321", "test2@test2.pl"), "543210");
         Car car = new Car(2, "111111", 2011, "Hyundai", "Tucson");
 
+        Assertions.assertNotNull(e1);
+        Assertions.assertNotNull(cl1);
+        Assertions.assertNotNull(car);
+
         SaleAndPurchaseContract sapc = new SaleAndPurchaseContract(3, e1, cl1, car, 50000);
+
+        Assertions.assertNotNull(sapc);
 
         Assertions.assertEquals(sapc.getId(), 3);
         Assertions.assertEquals(sapc.getIdCar(), 2);
@@ -63,18 +77,28 @@ public class ContractTest {
                 new Account("login321", "haslo321", "test2@test2.pl"), "543210");
         Car car = new Car(3, "111111", 2005, "Opel", "Astra");
 
+        Assertions.assertNotNull(e1);
+        Assertions.assertNotNull(cl1);
+        Assertions.assertNotNull(car);
+
         List<String> conditions = new ArrayList<>();
         conditions.add("Condition 1");
         conditions.add("Condition 2");
         conditions.add("Condition 3");
 
+        Assertions.assertNotNull(conditions);
+
         UsedCarDealerContract ucdc = new UsedCarDealerContract(4, e1, cl1, car, conditions);
+
+        Assertions.assertNotNull(ucdc);
 
         Assertions.assertEquals(ucdc.getId(), 4);
         Assertions.assertEquals(ucdc.getIdCar(), 3);
         Assertions.assertEquals(ucdc.getClient(), cl1);
 
         Car car2 = new Car(2, "111111", 2011, "Hyundai", "Tucson");
+
+        Assertions.assertNotNull(car2);
 
         ucdc.setCar(car2);
 

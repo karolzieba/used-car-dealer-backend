@@ -5,10 +5,16 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pl.usedcardealer.usedcardealer.Car.Car;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CarTest {
     @Test
     public void TestCar(){
         Car car = new Car(4, "666666", 2021, "Volkswagen", "Golf");
+
+        Assertions.assertNotNull(car);
+
         Assertions.assertEquals(car.getId(), 4);
         Assertions.assertEquals(car.getVin(), "666666");
         Assertions.assertEquals(car.getYear(), 2021);
@@ -38,5 +44,12 @@ public class CarTest {
 
         car.setStolen(true);
         Assertions.assertTrue(car.isStolen());
+
+        List<String> carDamage = new ArrayList<>();
+        carDamage.add("Zbite światła");
+
+        car.setCarDamage(carDamage);
+
+        Assertions.assertTrue(car.isCarIsDamaged());
     }
 }

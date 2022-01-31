@@ -16,6 +16,9 @@ public class AccountTest {
     @Test
     public void TestAccount() {
         Account account = new Account("login", "password", "email@gmail.com");
+
+        Assertions.assertNotNull(account);
+
         Assertions.assertEquals(account.getLogin(), "login");
         Assertions.assertEquals(account.getPassword(), "password");
         Assertions.assertEquals(account.getEmailAddress(), "email@gmail.com");
@@ -33,6 +36,12 @@ public class AccountTest {
         Person person = new Person("Jakub", "Stawiarz", "80032346118", LocalDate.now(), address);
         Account account = new Account("login", "password", "email@gmail.com");
         Client client = new Client(1, person, account, "87101013970055002221000000");
+
+        Assertions.assertNotNull(address);
+        Assertions.assertNotNull(person);
+        Assertions.assertNotNull(account);
+        Assertions.assertNotNull(client);
+
         Assertions.assertEquals(client.getPerson(), person);
         Assertions.assertEquals(client.getAccount(), account);
         Assertions.assertEquals(client.getNumberOfBankAccount(), "87101013970055002221000000");
@@ -59,6 +68,14 @@ public class AccountTest {
         Address addressBranch = new Address("26-020", "Chmielnik", "Orkana", 4);
         Branch branch = new Branch(1, "Branch1", 1, addressBranch);
         Employee employee = new Employee(1, person, account,"kierownik", 4200);
+
+        Assertions.assertNotNull(address);
+        Assertions.assertNotNull(person);
+        Assertions.assertNotNull(account);
+        Assertions.assertNotNull(addressBranch);
+        Assertions.assertNotNull(branch);
+        Assertions.assertNotNull(employee);
+
         Assertions.assertEquals(employee.getPerson(), person);
         Assertions.assertEquals(employee.getAccount(), account);
         Assertions.assertEquals(employee.getPosition(), "kierownik");
@@ -76,6 +93,12 @@ public class AccountTest {
         Person person = new Person("Jakub", "Stawiarz", "80032346118", LocalDate.now(), address);
         Account account = new Account("login", "password", "email@gmail.com");
         Administrator administrator = new Administrator(1, person, account);
+
+        Assertions.assertNotNull(address);
+        Assertions.assertNotNull(person);
+        Assertions.assertNotNull(account);
+        Assertions.assertNotNull(administrator);
+
         Assertions.assertEquals(administrator.getPerson(), person);
         Assertions.assertEquals(administrator.getAccount(), account);
 
@@ -93,7 +116,14 @@ public class AccountTest {
         Person person = new Person("Jakub", "Stawiarz", "80032346118", LocalDate.now(), address);
         Account account = new Account("login", "password", "email@gmail.com");
         Client client = new Client(2, person, account, "PL 83 1010 1023 0000 2613 9510 0000");
+
+        Assertions.assertNotNull(address);
+        Assertions.assertNotNull(person);
+        Assertions.assertNotNull(account);
+        Assertions.assertNotNull(client);
+
         Assertions.assertTrue(client.isValidIban(client.getNumberOfBankAccount()));
+
         client.setNumberOfBankAccount("PL 83 1010 1023 0000 2613 9510 0055");
         Assertions.assertFalse(client.isValidIban(client.getNumberOfBankAccount()));
     }
