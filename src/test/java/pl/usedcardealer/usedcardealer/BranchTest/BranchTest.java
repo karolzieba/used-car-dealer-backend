@@ -9,7 +9,7 @@ public class BranchTest {
     @Test
     public void TestBranch() {
         Address address = new Address("26-020", "Chmielnik", "rynek", 10);
-        Branch branch = new Branch("Branch1", 1, address);
+        Branch branch = new Branch(1, "Branch1", 1, address);
         Assertions.assertEquals(branch.getName(), "Branch1");
         Assertions.assertEquals(branch.getNumberOfBranch(), 1);
         Assertions.assertEquals(branch.getAdress(), address);

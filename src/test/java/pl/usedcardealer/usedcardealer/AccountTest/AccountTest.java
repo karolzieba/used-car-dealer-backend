@@ -57,7 +57,7 @@ public class AccountTest {
         Person person = new Person("Jakub", "Stawiarz", "80032346118", LocalDate.now(), address);
         Account account = new Account("login", "password", "email@gmail.com");
         Address addressBranch = new Address("26-020", "Chmielnik", "Orkana", 4);
-        Branch branch = new Branch("Branch1", 1, addressBranch);
+        Branch branch = new Branch(1, "Branch1", 1, addressBranch);
         Employee employee = new Employee(1, person, account,"kierownik", 4200);
         Assertions.assertEquals(employee.getPerson(), person);
         Assertions.assertEquals(employee.getAccount(), account);
