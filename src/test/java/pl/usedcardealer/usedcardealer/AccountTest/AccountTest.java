@@ -44,7 +44,13 @@ public class AccountTest {
         client.setAccount(account2);
         Assertions.assertEquals(client.getPerson(), person2);
         Assertions.assertEquals(client.getAccount(), account2);
-    }
+
+        client.setNumberOfPurchases(123);
+        Assertions.assertEquals(client.getNumberOfPurchases(), 123);
+
+        client.setNumberOfSales(1);
+        Assertions.assertEquals(client.getNumberOfSales(), 1);
+        }
     @Test
     public void TestEmployee() {
         Address address = new Address("26-020", "Chmielnik", "rynek", 10);
@@ -57,6 +63,12 @@ public class AccountTest {
         Assertions.assertEquals(employee.getAccount(), account);
         Assertions.assertEquals(employee.getPosition(), "kierownik");
         Assertions.assertEquals(employee.getSalary(), 4200);
+
+        employee.setPosition("kasjer");
+        Assertions.assertEquals(employee.getPosition(), "kasjer");
+
+        employee.setSalary(3200);
+        Assertions.assertEquals(employee.getSalary(), 3200);
     }
     @Test
     public void TestAdministrator() {

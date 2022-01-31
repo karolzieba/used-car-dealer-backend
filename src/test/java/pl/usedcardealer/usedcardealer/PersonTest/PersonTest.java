@@ -15,8 +15,22 @@ public class PersonTest {
         Address address = new Address("26-020", "Chmielnik", "rynek", 10);
         Person person = new Person("Jakub", "Stawiarz", "80032346118", date, address);
         Assertions.assertEquals(person.getAdress().getPostcode(), "26-020");
+        Assertions.assertEquals(person.getAdress().getCity(), "Chmielnik");
         Assertions.assertEquals(person.getAdress().getStreet(), "rynek");
         Assertions.assertEquals(person.getAdress().getPropertyNumber(), 10);
+
+        address.setPostcode("22-321");
+        Assertions.assertEquals(person.getAdress().getPostcode(), "22-321");
+
+        address.setCity("Warszawa");
+        Assertions.assertEquals(person.getAdress().getCity(), "Warszawa");
+
+        address.setStreet("Testowa");
+        Assertions.assertEquals(person.getAdress().getStreet(), "Testowa");
+
+        address.setPropertyNumber(94);
+        Assertions.assertEquals(person.getAdress().getPropertyNumber(), 94);
+
     }
     @Test
     public void TestPerson() {
@@ -28,6 +42,24 @@ public class PersonTest {
         Assertions.assertEquals(person.getPesel(), "80032346118");
         Assertions.assertEquals(person.getDateOfBirth(), date);
         Assertions.assertEquals(person.getAdress(), address);
+
+        person.setName("Jan");
+        Assertions.assertEquals(person.getName(), "Jan");
+
+        person.setLastName("Nowak");
+        Assertions.assertEquals(person.getLastName(), "Nowak");
+
+        person.setPesel("83332346118");
+        Assertions.assertEquals(person.getPesel(), "83332346118");
+
+        LocalDate date2 = LocalDate.now();
+        person.setDateOfBirth(date2);
+        Assertions.assertEquals(person.getDateOfBirth(), date2);
+
+        Address address2 = new Address("55-120", "Krakow", "Cieman", 32);
+        person.setAdress(address2);
+        Assertions.assertEquals(person.getAdress(), address2);
+
     }
     @Test
     public void TestValidationPesel() {

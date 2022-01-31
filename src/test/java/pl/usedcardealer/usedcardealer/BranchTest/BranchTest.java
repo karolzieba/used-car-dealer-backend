@@ -13,5 +13,12 @@ public class BranchTest {
         Assertions.assertEquals(branch.getName(), "Branch1");
         Assertions.assertEquals(branch.getNumberOfBranch(), 1);
         Assertions.assertEquals(branch.getAdress(), address);
+
+        branch.setNumberOfBranch(3);
+        Assertions.assertEquals(branch.getNumberOfBranch(), 3);
+
+        Address address2 = new Address("11-333", "Krakow", "srebrna", 14);
+        branch.setAdress(address2);
+        Assertions.assertEquals(branch.getAdress(), address2);
     }
 }
